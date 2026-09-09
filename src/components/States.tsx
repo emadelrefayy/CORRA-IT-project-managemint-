@@ -1,0 +1,4 @@
+import React from 'react';
+export function LoadingState(){return <div className="loading" role="status"><div className="skeleton-line" />Retrieving current records from Supabase…</div>}
+export function EmptyState({label='No records found'}:{label?:string}){return <div className="empty"><strong>{label}</strong><div className="muted" style={{marginTop:8}}>This view reflects the connected database. Nothing has been returned yet.</div></div>}
+export function ErrorState({message,onRetry}:{message:string;onRetry:()=>void}){return <div className="error" role="alert"><strong>Unable to load this view</strong><div style={{marginTop:7}}>{message}</div><button className="retry" onClick={onRetry}>Retry connection</button></div>}

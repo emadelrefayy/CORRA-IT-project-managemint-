@@ -1,0 +1,7 @@
+export type ProjectStatus = 'planning'|'active'|'on_hold'|'completed'|'closed';
+export type AssetStatus = 'active'|'offline'|'faulty'|'under_maintenance'|'spare'|'stored'|'retired'|'lost';
+export type MaintenanceStatus = 'open'|'in_progress'|'resolved'|'cancelled';
+export interface Project { id:string; project_code:string; name:string; client_id?:string|null; sector?:string|null; status:ProjectStatus; start_date?:string|null; expected_end_date?:string|null; actual_end_date?:string|null; employee_count?:number|null; address?:string|null; project_manager_name?:string|null; }
+export interface Asset { id:string; asset_tag?:string|null; project_id:string; category_id?:string|null; name?:string|null; serial_number?:string|null; management_ip?:string|null; status:AssetStatus; location_name?:string|null; }
+export interface Vlan { id:string; project_id:string; vlan_id:number; name?:string|null; purpose?:string|null; subnet?:string|null; gateway?:string|null; dhcp_enabled?:boolean|null; dns_servers?:string|null; }
+export interface Maintenance { id:string; project_id:string; asset_id?:string|null; status:MaintenanceStatus; issue?:string|null; technician_name?:string|null; started_at?:string|null; resolved_at?:string|null; }
