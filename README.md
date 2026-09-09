@@ -1,4 +1,4 @@
-# CORRA IT Project Management
+# KORRA IT Project Management
 
 Internal IT Project Management System for KORRA.
 
