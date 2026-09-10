@@ -21,7 +21,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --package-lock=false
+
+      - name: Verify dependencies
+        run: npm ls react react-dom react-router-dom lucide-react
 
       - name: Build
         run: npm run build
